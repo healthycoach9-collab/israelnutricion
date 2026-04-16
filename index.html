@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Israel Nutrición | Dietética y Entrenamiento</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    <title>Israel Nutrición | Dietética y Entrenamiento</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -80,8 +80,8 @@
         }
 
         .perfil-img {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: contain;
             border: 5px solid var(--verde-claro);
@@ -101,17 +101,17 @@
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .card h3 {
             color: var(--verde-oscuro);
             border-bottom: 2px solid var(--verde-claro);
             padding-bottom: 10px;
-            margin-top: 0;
             text-align: center;
-            font-size: 1.2rem;
         }
 
         .precio-item {
@@ -123,30 +123,55 @@
             padding-bottom: 5px;
         }
 
-        .precio-item span:last-child {
-            font-weight: bold;
-            color: var(--verde-oscuro);
+        /* Estilos del Botón de Contacto y Dropdown */
+        .dropdown {
+            position: relative;
+            display: block;
+            margin-top: 15px;
+            text-align: center;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
+        .btn-contactar {
+            width: 100%;
+            padding: 12px;
             background: var(--verde-oscuro);
             color: white;
             text-decoration: none;
             border-radius: 25px;
-            margin-top: 10px;
-            transition: background 0.3s;
             font-weight: bold;
             border: none;
             cursor: pointer;
+            transition: 0.3s;
         }
 
-        .btn:hover { background: var(--verde-claro); }
-        .btn-whatsapp { background: #25D366; }
-        .btn-email { background: #ea4335; }
+        .btn-contactar:hover { background: var(--verde-claro); }
 
-        #contacto { text-align: center; background: var(--gris-claro); }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 10px;
+            bottom: 50px; /* Se abre hacia arriba para no tapar el contenido */
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .dropdown-content a:hover { background-color: #ddd; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .contact-gmail { color: #ea4335 !important; }
+        .contact-wa { color: #25D366 !important; }
 
         footer {
             text-align: center;
@@ -171,61 +196,85 @@
         </div>
         <h2>Sobre mí</h2>
         <p>Mi misión es ayudarte a alcanzar tus objetivos de salud y bienestar de manera sostenible, combinando ciencia, motivación y hábitos que realmente funcionan en tu día a día.</p>
-        <p>Con años de formación como Técnico Superior en Dietética y Entrenador Personal y experiencia guiando a personas con diferentes metas, he aprendido que cada cuerpo es único y requiere un enfoque individualizado.</p>
-        <p>Aquí no encontrarás soluciones genéricas ni dietas imposibles de seguir. Mi compromiso es ofrecer asesorías personalizadas, prácticas y basadas en evidencia.</p>
+        <p>Con años de formación como Técnico Superior en Dietética y Entrenador Personal, he aprendido que cada cuerpo es único y requiere un enfoque individualizado.</p>
     </section>
 
     <section id="servicios">
         <h2>Nuestros Servicios</h2>
         <div class="grid-servicios">
+            
             <div class="card">
-                <h3>Presencial</h3>
-                <div class="precio-item"><span>1ª consulta</span> <span>GRATIS</span></div>
-                <div class="precio-item"><span>Plan de dieta</span> <span>30€/mes</span></div>
-                <div class="precio-item"><span>Dieta + Antropometría</span> <span>40€/mes</span></div>
-                <div class="precio-item"><span>Dieta + Entreno</span> <span>50€/mes</span></div>
-                <div class="precio-item"><span>Pack completo</span> <span>80€/mes</span></div>
+                <div>
+                    <h3>Presencial</h3>
+                    <div class="precio-item"><span>1ª consulta</span> <span>GRATIS</span></div>
+                    <div class="precio-item"><span>Plan de dieta</span> <span>30€/mes</span></div>
+                    <div class="precio-item"><span>Dieta + Antropometría</span> <span>40€/mes</span></div>
+                    <div class="precio-item"><span>Dieta + Entreno</span> <span>50€/mes</span></div>
+                    <div class="precio-item"><span>Pack completo</span> <span>80€/mes</span></div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn-contactar">Contactar</button>
+                    <div class="dropdown-content">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=healthycoach9@gmail.com&su=Interés en Servicio Presencial" target="_blank" class="contact-gmail">Vía Gmail</a>
+                        <a href="https://api.whatsapp.com/send/?phone=34693531770&text=Hola Israel, me interesa el servicio Presencial" target="_blank" class="contact-wa">Vía WhatsApp</a>
+                    </div>
+                </div>
             </div>
 
             <div class="card">
-                <h3>Online</h3>
-                <div class="precio-item"><span>1ª consulta*</span> <span>GRATIS</span></div>
-                <div class="precio-item"><span>Plan de dieta</span> <span>25€/mes</span></div>
-                <div class="precio-item"><span>Dieta + Antropo.*</span> <span>35€/mes</span></div>
-                <div class="precio-item"><span>Dieta + Entreno</span> <span>45€/mes</span></div>
-                <div class="precio-item"><span>Pack completo*</span> <span>75€/mes</span></div>
-                <p style="font-size: 0.7rem; color: #666; margin-top: 5px;">*Consulta y antropometría presencial.</p>
+                <div>
+                    <h3>Online</h3>
+                    <div class="precio-item"><span>1ª consulta*</span> <span>GRATIS</span></div>
+                    <div class="precio-item"><span>Plan de dieta</span> <span>25€/mes</span></div>
+                    <div class="precio-item"><span>Dieta + Antropo.*</span> <span>35€/mes</span></div>
+                    <div class="precio-item"><span>Dieta + Entreno</span> <span>45€/mes</span></div>
+                    <div class="precio-item"><span>Pack completo*</span> <span>75€/mes</span></div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn-contactar">Contactar</button>
+                    <div class="dropdown-content">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=healthycoach9@gmail.com&su=Interés en Servicio Online" target="_blank" class="contact-gmail">Vía Gmail</a>
+                        <a href="https://api.whatsapp.com/send/?phone=34693531770&text=Hola Israel, me interesa el servicio Online" target="_blank" class="contact-wa">Vía WhatsApp</a>
+                    </div>
+                </div>
             </div>
 
             <div class="card">
-                <h3>Bonos y Dto</h3>
-                <div class="precio-item"><span>Plan 3 meses</span> <span>10% DTO</span></div>
-                <div class="precio-item"><span>Plan 6 meses</span> <span>15% DTO</span></div>
-                <div class="precio-item"><span>Plan 12 meses</span> <span>30% DTO</span></div>
-                <p style="font-size: 0.8rem; text-align: center; margin-top: 10px;">¡Ahorra comprometiéndote con tu cambio!</p>
+                <div>
+                    <h3>Bonos y Dto</h3>
+                    <div class="precio-item"><span>Plan 3 meses</span> <span>10% DTO</span></div>
+                    <div class="precio-item"><span>Plan 6 meses</span> <span>15% DTO</span></div>
+                    <div class="precio-item"><span>Plan 12 meses</span> <span>30% DTO</span></div>
+                    <p style="font-size: 0.8rem; text-align: center; margin-top: 10px; color: #666;">¡Ahorra con compromiso!</p>
+                </div>
+                <div class="dropdown">
+                    <button class="btn-contactar">Contactar</button>
+                    <div class="dropdown-content">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=healthycoach9@gmail.com&su=Interés en Bonos de Descuento" target="_blank" class="contact-gmail">Vía Gmail</a>
+                        <a href="https://api.whatsapp.com/send/?phone=34693531770&text=Hola Israel, quiero más info sobre los bonos" target="_blank" class="contact-wa">Vía WhatsApp</a>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-            <h3>¿Hablamos?</h3>
-            <p>Si estás interesado en contratar algún servicio, rellena este formulario:</p>
-            <a href="https://form.typeform.com/to/SPBOixNY" target="_blank" class="btn">Abrir Formulario</a>
+            <h3>¿Prefieres rellenar un formulario?</h3>
+            <p>Si tienes claro lo que buscas, rellena este formulario y yo te contactaré:</p>
+            <a href="https://form.typeform.com/to/SPBOixNY" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; padding: 12px 40px;">Abrir Formulario</a>
         </div>
     </section>
 
-    <section id="contacto">
+    <section id="contacto" style="text-align: center; background: var(--gris-claro);">
         <h2>Contacto</h2>
         <p>Escríbeme por la vía que prefieras:</p>
-        
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=healthycoach9@gmail.com&su=Información Servicios Israel Nutrición" target="_blank" class="btn btn-email">Enviar Correo (Gmail)</a>
-        
-        <a href="https://api.whatsapp.com/send/?phone=34693531770" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-        
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=healthycoach9@gmail.com&su=Información Servicios Israel Nutrición" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; background:#ea4335; margin: 10px;">Enviar Correo (Gmail)</a>
+        <a href="https://api.whatsapp.com/send/?phone=34693531770" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; background:#25D366; margin: 10px;">WhatsApp</a>
         <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">Email: healthycoach9@gmail.com</p>
     </section>
 
     <footer>
-        &copy; 2026 Israel Nutrición - Nutrición y Deporte.
+        &copy; 2026 Israel Nutrición - Salud y Rendimiento.
     </footer>
 
 </body>
